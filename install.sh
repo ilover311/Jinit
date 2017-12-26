@@ -26,9 +26,6 @@ cat .gitconfig >> ~/.gitconfig
 # bash settings
 cp -rf .bash* ~/
 
-# irbrc setting
-cp -rf .irbrc ~/
-
 # npm setting
 echo "prefix = $HOME/.npm/" > ~/.npmrc
 
@@ -39,21 +36,19 @@ curl -L -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 cd ~/.vim/bundle
-git clone https://github.com/tpope/vim-rails.git
-git clone https://github.com/tpope/vim-bundler.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/mmalecki/vim-node.js.git
 git clone https://github.com/kchmck/vim-coffee-script.git
-#git clone https://github.com/groenewege/vim-less.git
 git clone https://github.com/hail2u/vim-css3-syntax
 git clone https://github.com/junegunn/seoul256.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
 # need mercurial ( apt-get install -y mercurial )
+
 git clone https://github.com/fatih/vim-go.git
-git clone git://github.com/slim-template/vim-slim.git
 git clone https://github.com/ekalinin/Dockerfile.vim.git
 
 cd ~/.sexyinit
