@@ -48,7 +48,6 @@ git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
 # need mercurial ( apt-get install -y mercurial )
 
-git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/ekalinin/Dockerfile.vim.git
 
 cd ~/.sexyinit
