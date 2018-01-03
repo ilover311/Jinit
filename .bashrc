@@ -117,8 +117,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/local/rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.npm/bin # Add NPM to PATH for scripting
 PATH=$PATH:./node_modules/.bin # NPM Relative PATH
 PATH=$PATH:/usr/bin:/usr/bin/bash
