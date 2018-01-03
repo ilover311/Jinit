@@ -21,6 +21,7 @@ set ignorecase
 set smartcase
 set expandtab
 set hlsearch
+set encoding=utf-8
 highlight MatchParen cterm=bold ctermbg=lightgreen ctermfg=magenta
 
 " Markdown Plugin
