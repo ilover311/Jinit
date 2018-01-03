@@ -138,59 +138,21 @@ LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 export LS_COLORS
 
 
-### algorithm setting
-
-gccCompileAndRun(){
-  g++ -o $1 $1.cpp
-  ./$1
-}
-
-moveToOldAndWriteNewFile(){
-  mv $1 $1.old
-  vim $1
-}
-
-randomstring(){
-  return $(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1)
-}
-
-sexyinitupdate(){
+jinitupdate(){
   if [ `builtin type -p curl` ]; then
-    $current_sha=$(cat ~/.sexyinit_sha)
-    $head_sha=$(curl -s https://api.github.com/repos/flrngel/sexyinit/git/refs/heads/master | python -c "import sys,json; print(json.load(sys.stdin)['object']['sha']);")
+    $current_sha=$(cat ~/.jinit_sha)
+    $head_sha=$(curl -s https://api.github.com/repos/ilover311/jinit/git/refs/heads/master | python -c "import sys,json; print(json.load(sys.stdin)['object']['sha']);")
 
     if [ "$current_sha" -ne "$head_sha" ]; then
-      echo "Updating to latest sexyinit..\n"
-      if [ ! -d $HOME/.sexyinit ]; then
-        git clone https://github.com/flrngel/sexyinit $HOME/.sexyinit
+      echo "Updating to latest jinit..\n"
+      if [ ! -d $HOME/.jinit ]; then
+        git clone https://github.com/ilover311/jinit $HOME/.jinit
       else
-        cd $HOME/.sexyinit
+        cd $HOME/.jinit
         git fetch; git checkout master; git reset origin/master --hard
       fi
-      $HOME/.sexyinit/install.sh
+      $HOME/.jinit/install.sh
     fi
   fi
 }
 
-infloop() {
-time=$1
-shift
-while :
-do
-  sleep $time
-  $@
-done
-}
-
-f_deploy() {
-  # master to production
-  git checkout master
-  git tag $(date +%Y-%m-%d_%H%M%S)
-  git checkout -B production
-  git push origin master production --tags
-  git checkout master
-}
-
-alias dl='sudo docker ps -l -q'
-alias crun=gccCompileAndRun
-alias vnew=moveToOldAndWriteNewFile
