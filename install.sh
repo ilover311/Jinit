@@ -46,6 +46,8 @@ git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
+git clone https://github.com/vim-airline/vim-airline.git 
+git clone https://github.com/airblade/vim-gitgutter.git
 # need mercurial ( apt-get install -y mercurial )
 
 git clone https://github.com/ekalinin/Dockerfile.vim.git
