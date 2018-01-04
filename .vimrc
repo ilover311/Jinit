@@ -47,3 +47,4 @@ au BufReadPost *
 \ exe "norm g`\"" |
 \ endif
 
+map <F3> :NERDTreeToggle<cr>
