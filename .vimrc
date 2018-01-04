@@ -15,7 +15,7 @@ set shiftwidth=4
 set si
 set cin
 set cinoptions+=j1
-set backspace=4
+set backspace=2
 set backspace=indent,eol,start
 set ignorecase
 set smartcase
