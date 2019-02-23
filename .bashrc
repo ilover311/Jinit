@@ -63,9 +63,9 @@ YELLOW=`tput setf 6`
 WHITE=`tput setf 7`
 
 if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[${RED}\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[${RED}\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ '
 else
-  PS1='${debian_chroot:+($debian_chroot)}[\[\033[01;91m\]\u@\h\[\033[00m\]]:\w\$ '
+  PS1='${debian_chroot:+($debian_chroot)}[\[\033[01;91m\]\u@\h\[\033[00m\]]:\w$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -117,6 +117,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.npm/bin # Add NPM to PATH for scripting
 PATH=$PATH:./node_modules/.bin # NPM Relative PATH
 PATH=$PATH:/usr/bin:/usr/bin/bash
@@ -136,7 +138,7 @@ LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 export LS_COLORS
 
 ps_init(){
-  mkdir -p $1
+  mkdir -p ./$1
   cp -rf $HOME/.ps_template/* ./$1
 }
 

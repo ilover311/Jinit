@@ -29,6 +29,7 @@ cp -rf .bash* ~/
 # npm setting
 echo "prefix = $HOME/.npm/" > ~/.npmrc
 
+
 # vim settings 
 cp -rf .vimrc ~/
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
@@ -52,6 +53,10 @@ git clone https://github.com/airblade/vim-gitgutter.git
 
 git clone https://github.com/ekalinin/Dockerfile.vim.git
 
+# setting c++ ps 
+cp -rf .ps_template ~/
+
 cd ~/.jinit
 git rev-parse HEAD > ~/.jinit_sha
+
 echo "execute command: \"source ~/.bash_profile\""

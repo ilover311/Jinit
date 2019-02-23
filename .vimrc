@@ -8,10 +8,10 @@ let g:seoul256_background=233
 syntax on
 set nu
 " set ts=2
-set sw=4
-set sts=4
+set sw=2
+set sts=2
 set showmatch
-set shiftwidth=4
+set shiftwidth=2
 set si
 set cin
 set cinoptions+=j1
@@ -47,4 +47,11 @@ au BufReadPost *
 \ exe "norm g`\"" |
 \ endif
 
-map <F3> :NERDTreeToggle<cr>
+map <F5> :NERDTreeToggle <CR>
+
+map <Tab> :tabn <CR>
+map <S-Tab> :tabp <CR>
+map <C-n> :tabe <CR>
+map <F3> :!pbcopy < % <CR>
+map <F10> :!g++ -std=c++17 % -Wall -g -o %.out <CR>
+map <F9> :!./%.out < in.txt <CR>
