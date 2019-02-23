@@ -29,6 +29,9 @@ cp -rf .bash* ~/
 # npm setting
 echo "prefix = $HOME/.npm/" > ~/.npmrc
 
+# setting c++ ps 
+mkdir -p $HOME/.ps_template
+cp -rf .ps_template/ ~/.ps_template/
 
 # vim settings 
 cp -rf .vimrc ~/
@@ -52,9 +55,6 @@ git clone https://github.com/airblade/vim-gitgutter.git
 # need mercurial ( apt-get install -y mercurial )
 
 git clone https://github.com/ekalinin/Dockerfile.vim.git
-
-# setting c++ ps 
-cp -rf .ps_template ~/
 
 cd ~/.jinit
 git rev-parse HEAD > ~/.jinit_sha
