@@ -51,6 +51,8 @@ git clone https://github.com/airblade/vim-gitgutter.git
 
 git clone https://github.com/ekalinin/Dockerfile.vim.git
 
+cp -rf .ps_template ~/
+
 cd ~/.jinit
 git rev-parse HEAD > ~/.jinit_sha
 
