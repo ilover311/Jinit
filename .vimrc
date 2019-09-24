@@ -1,17 +1,16 @@
 execute pathogen#infect()
 
 " color
-colo seoul256
+color seoul256
 let g:seoul256_background=233
 
-"
 syntax on
 set nu
-" set ts=2
-set sw=2
-set sts=2
+set ts=4
+set sw=4
+set sts=4
 set showmatch
-set shiftwidth=2
+set shiftwidth=4
 set si
 set cin
 set cinoptions+=j1
@@ -39,6 +38,7 @@ set iskeyword+=\_
 
 " set vim yank unlimit
 set viminfo='100,h
+
 filetype plugin indent on
 
 " Remember last cursor position

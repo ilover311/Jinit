@@ -26,15 +26,14 @@ cat .gitconfig >> ~/.gitconfig
 # bash settings
 cp -rf .bash* ~/
 
-# npm setting
-echo "prefix = $HOME/.npm/" > ~/.npmrc
-
+# setting c++ ps 
+mkdir -p $HOME/.ps_template
+cp -rf .ps_template/ ~/.ps_template/
 
 # vim settings 
 cp -rf .vimrc ~/
-mkdir -p ~/.vim/autoload ~/.vim/bundle; \
-curl -L -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 cd ~/.vim/bundle
 git clone https://github.com/pangloss/vim-javascript.git
@@ -49,12 +48,8 @@ git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
 git clone https://github.com/vim-airline/vim-airline.git 
 git clone https://github.com/airblade/vim-gitgutter.git
-# need mercurial ( apt-get install -y mercurial )
 
 git clone https://github.com/ekalinin/Dockerfile.vim.git
-
-# setting c++ ps 
-cp -rf .ps_template ~/
 
 cd ~/.jinit
 git rev-parse HEAD > ~/.jinit_sha

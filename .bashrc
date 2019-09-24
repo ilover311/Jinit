@@ -141,22 +141,3 @@ ps_init(){
   mkdir -p ./$1
   cp -rf $HOME/.ps_template/* ./$1
 }
-
-jinitupdate(){
-  if [ `builtin type -p curl` ]; then
-    $current_sha=$(cat ~/.jinit_sha)
-    $head_sha=$(curl -s https://api.github.com/repos/ilover311/jinit/git/refs/heads/master | python -c "import sys,json; print(json.load(sys.stdin)['object']['sha']);")
-
-    if [ "$current_sha" -ne "$head_sha" ]; then
-      echo "Updating to latest jinit..\n"
-      if [ ! -d $HOME/.jinit ]; then
-        git clone https://github.com/ilover311/jinit $HOME/.jinit
-      else
-        cd $HOME/.jinit
-        git fetch; git checkout master; git reset origin/master --hard
-      fi
-      $HOME/.jinit/install.sh
-    fi
-  fi
-}
-
